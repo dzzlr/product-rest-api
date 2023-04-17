@@ -1,5 +1,14 @@
 # Product API
 
+## Endpoint API
+| **Method** | **Route**         | **Name**                       |
+|------------|-------------------|--------------------------------|
+| GET        | /api/products     | Get All Products               |
+| POST       | /api/products     | Add Products                   |
+| GET        | /api/products/:id | Get Detail Products With ID    |
+| PUT        | /api/products/:id | Update Detail Products With ID |
+| DELETE     | /api/products/:id | Delete Products With ID        |
+
 ## Requirements
 - NodeJS or NPM
 

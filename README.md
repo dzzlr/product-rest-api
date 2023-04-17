@@ -1,4 +1,4 @@
-# Product API
+# Product RESTful API
 
 ## Endpoint API
 | **Method** | **Route**         | **Name**                       |

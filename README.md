@@ -1,5 +1,5 @@
 # Product RESTful API
-RESTful API for sneaker products using ExpressJS
+RESTful API for sneaker products using ExpressJS with MongoDB
 
 ## Endpoint API
 | **Method** | **Route**         | **Name**                       |

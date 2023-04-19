@@ -1,9 +1,16 @@
 module.exports = (mongoose) => {
     const schema = mongoose.Schema(
         {
-            title: String,
+            sku: String,
             brand: String,
-            description: String,
+            name: String,
+            edition: String,
+            color: String,
+            price: Number,
+            size: Object,
+            image: Object,
+            url: String,
+            // description: String,
         },
         { timestamps: true }
     )

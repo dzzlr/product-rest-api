@@ -1,8 +1,8 @@
-const response = (code, status, data, res) => {
+const response = (code, data, res) => {
     res.json(code, [
         {
             code,
-            status,
+            status: "OK",
             data,
             metadata: {
                 prev: "",
@@ -10,5 +10,13 @@ const response = (code, status, data, res) => {
                 current: ""
             }
         }
-    ])
+    ]);
+
+    // if (code == 200) {
+    //     //
+    // } else if (code == 400) {
+    //     //
+    // }
 }
+
+module.exports = response;

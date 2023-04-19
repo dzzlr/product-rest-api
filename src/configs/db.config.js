@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 mongoose.Promise = global.Promise
-const db = mongoose.connect("mongodb://127.0.0.1:27017/collect_product", {
+const db = mongoose.connect(process.env.DATABASE_URL, {
                         useNewUrlParser: true,
                         useUnifiedTopology: true,
                         // useFindAndModify: true

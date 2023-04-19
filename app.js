@@ -10,9 +10,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.json({
-        message: "Welcome to RESTful API Product Express"
-    })
+    response(200, 'Welcome to RESTful API Product Express', res)
+})
+
+app.get('/product', (req, res) => {
+    let name = req.query.name || '';
+    let sortby = req.query.sortby || '';
+
+    response(200, `Query name is ${name} and SortBy is ${sortby}`, res)
 })
 
 require('./src/routes/product.routes')(app)

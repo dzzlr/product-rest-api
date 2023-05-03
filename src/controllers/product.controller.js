@@ -2,7 +2,7 @@ const db = require('../models');
 const Product = db.products;
 
 exports.findAll = async (req, res) => {
-    const name = req.query.name;
+    const search = req.query.search || '';
     const brand = req.query.brand || ['Adidas', 'New Balance', 'Nike'];
     const price = req.query.price || 0;
 
@@ -11,6 +11,7 @@ exports.findAll = async (req, res) => {
 
     try {
         const result = await Product.find({
+            name: { $regex: '.*' + search + '.*', $options: 'i'},
             brand: brand,
             price: { $gt: price } 
         })

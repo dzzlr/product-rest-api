@@ -2,8 +2,10 @@ const db = require('../models');
 const Product = db.products;
 
 exports.findAll = async (req, res) => {
+    const allBrandCategories  = await Product.distinct('brand');
+
     const search = req.query.search || '';
-    const brand = req.query.brand || ['Adidas', 'New Balance', 'Nike'];
+    const brand = req.query.brand || allBrandCategories;
     const price = req.query.price || 0;
 
     const page = parseInt(req.query.page) - 1 || 0;
@@ -14,7 +16,7 @@ exports.findAll = async (req, res) => {
             name: { $regex: '.*' + search + '.*', $options: 'i'},
             brand: brand,
             price: { $gt: price } 
-        })
+        }, ['-url', '-__v'])
         .skip(page * limit)
         .limit(limit);
 

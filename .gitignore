@@ -3,5 +3,6 @@
 
 # data
 /data
+/images
 
 .env

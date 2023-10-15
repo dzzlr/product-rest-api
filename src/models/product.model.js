@@ -4,11 +4,17 @@ module.exports = (mongoose) => {
             sku: {type: String, required: true, unique: true},
             brand: {type: String, required: true},
             name: {type: String, required: true},
-            edition: {type: String, required: false},
             color: {type: String, required: false},
-            price: {type: Number, required: true},
-            // size: Object,
-            // image: Object,
+            price: {
+                value: {type: Number, required: true},
+                currency: {type: String, required: true}
+            },
+            size: [{
+                _id: false,
+                value: {type: String, required: true}, 
+                in_stock: {type: Number, required: true}
+            }],
+            // image: {type: String, required: false},
             url: {type: String, required: true},
             // description: String,
         },

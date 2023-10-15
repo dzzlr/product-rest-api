@@ -2,7 +2,7 @@ const db = require('../models');
 const Product = db.products;
 
 exports.findAll = async (req, res) => {
-    const allBrandCategories  = await Product.distinct('brand');
+    const allBrandCategories = await Product.distinct('brand');
 
     const search = req.query.search || '';
     const brand = req.query.brand || allBrandCategories;
@@ -13,10 +13,10 @@ exports.findAll = async (req, res) => {
 
     try {
         const result = await Product.find({
-            name: { $regex: '.*' + search + '.*', $options: 'i'},
-            brand: brand,
-            price: { $gt: price } 
-        }, ['-url', '-__v'])
+            'name': { $regex: '.*' + search + '.*', $options: 'i'},
+            'brand': brand,
+            'price.value': { $gt: price } 
+        }).select('_id brand name color price')
         .skip(page * limit)
         .limit(limit);
 
@@ -44,9 +44,10 @@ exports.create = async (req, res) => {
         sku: req.body.sku,
         brand: req.body.brand,
         name: req.body.name,
-        edition: req.body.edition ? req.body.edition : null,
+        // edition: req.body.edition ? req.body.edition : null,
         color: req.body.color ? req.body.color : null,
         price: req.body.price,
+        size: req.body.size,
         url: req.body.url,
         // description: req.body.description ? req.body.description : "null"
     });

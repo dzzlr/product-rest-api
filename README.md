@@ -1,30 +1,18 @@
 # Product RESTful API
-RESTful API for sneaker products using ExpressJS with MongoDB
+RESTful API for managing a collection of sneaker products. The API allows users to perform various operations related to sneakers, including creating, reading, updating, and deleting product entries. It is designed to be a lightweight and efficient solution for handling sneaker product data.
 
-## Endpoint API
-| **Method** | **Route**         | **Description**                |
-|------------|-------------------|--------------------------------|
-| GET        | /api/products     | Get All Products               |
-| POST       | /api/products     | Add Products                   |
-| GET        | /api/products/:id | Get Detail Products With ID    |
-| PUT        | /api/products/:id | Update Detail Products With ID |
-| DELETE     | /api/products/:id | Delete Products With ID        |
+# Branches
+- The `express` branch is dedicated to the development of the front-end and back-end of our application using Node.js and the Express.js framework. Here, you'll find code related to the user interface, API routes, and other features built on the Node.js stack.
+- The `golang` branch focuses on building and enhancing the server-side components of our application using the Go (Golang) programming language. This branch contains code for the API server, background jobs, and other Golang-specific features.
 
-Getting Data Products using Filter and Pagination
-| **Parameter**  | **Type**  | **Required** | **Description**                      |
-|----------------|-----------|--------------|--------------------------------------|
-| search         | String    | Optional     | Search for product                   |
-| brand          | String    | Optional     | Filter for product brand             |
-| price          | Integer   | Optional     | Filter for product price             |
-| page           | Integer   | Optional     | Link to another page                 |
-| limit          | Integer   | Optional     | Show maximum number product per page |
+## Features
+- **Product Management**: Easily manage sneaker products, including details like brand, model, colorways, and pricing.
+- **Search and Filtering**: Implement powerful search and filtering functionality to find sneakers based on various attributes.
+- **Pagination**: Handle large datasets gracefully with built-in pagination.
 
-## Requirements
-- NodeJS or NPM
-
-## Usage
-1. Fork this repository.
-2. Duplicate `.env.example` and rename it to `.env` then make  changes according to your development server configuration.
-3. Run the command `npm install` in the project folder of this repository.
-4. Create a collection in MongoDB called `collect_product` (match with your .env) on your development server
-5. Run the app `npm run start-dev`
+## Technologies Used
+- **Node.js**: The API server is built using Node.js for its speed and scalability.
+- **Express.js**: We utilize Express.js to create a robust and maintainable API.
+- **Gin**: Provides a fast and minimalistic approach to building robust APIs.
+- **Fiber**: Provides a routing engine and various middleware options for building efficient APIs.
+- **MongoDB**: Stored in a MongoDB database, providing flexibility and performance.

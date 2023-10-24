@@ -1,5 +1,5 @@
 # Product RESTful API
-RESTful API for sneaker products using ExpressJS with MongoDB
+RESTful API for sneaker products using Gin with MongoDB
 
 ## Endpoint API
 | **Method** | **Route**         | **Description**                |
@@ -20,11 +20,6 @@ Getting Data Products using Filter and Pagination
 | limit          | Integer   | Optional     | Show maximum number product per page |
 
 ## Requirements
-- NodeJS or NPM
+- Gin
 
 ## Usage
-1. Fork this repository.
-2. Duplicate `.env.example` and rename it to `.env` then make  changes according to your development server configuration.
-3. Run the command `npm install` in the project folder of this repository.
-4. Create a collection in MongoDB called `collect_product` (match with your .env) on your development server
-5. Run the app `npm run start-dev`
